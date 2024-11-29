@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <div class="row p-2 container border shadow border-3" style="height: 90%;">
+        <div class="col d-flex align-items-center justify-content-center">
+            <img src="{{products.image.url}}" alt="" class="img-fluid">
+        </div>
+        <div class="col d-flex flex-column justify-content-center">
+            <h2>{{products.title}}</h2>
+            <h4>{{products.description}}</h4>
+            <h6>RS:{{products.price}}</h6>
+            <p>Category:{{products.category}}</p>
+            <div class="d-grid">
+                <a href="{% url 'cart' products.id %}" class="btn btn-outline-success">
+                    <i class="fa-solid fa-cart-shopping" style="color: #293829;"></i>
+                    Add to Cart
+                </a>
+            </div>
+</div>
+</div>
+</div>
+{% endblock nav %}

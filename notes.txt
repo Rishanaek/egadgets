@@ -1,0 +1,51 @@
+Egadgets: Ecommerce App:
+-------------------------
+
+->customer:
+
+-signup,signin
+-view products
+-view product details
+-add to cart
+-view cart list
+-remove from cart
+-place order
+-view orders
+-cancel order
+
+->Admin(Using django Admin interface):
+
+-add products
+-manage product details
+-view orders
+-change order status
+-----------------------------
+
+Product:
+-title - Char
+-description - Char
+-price - integer
+-category - Char
+-image - image
+
+cart:
+-product - foreignKey
+-user - foreignKey
+-datetime -datetime
+-quantity - integer
+
+orders:
+-user - foreignKey
+-product - foreignKey
+-
+
+->user model have a 3 type users:
+
+1.superuser-1 1 1
+2.staffuser-0 1 1
+3.normaluser-0 0 1
+(is_superuser is_staff is_active)
+
+is_active-user can complete authenticate
+is_staff user can complete authenticated on admin side also,and can have access on admin interface which given by admin/super user
+is_superuser-user called superuser/admin have complete access over admin interface

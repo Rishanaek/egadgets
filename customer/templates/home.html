@@ -1,0 +1,89 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+{% load static %}
+{% if messages %}
+{% for i in messages %}
+{% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success alert-dismissible fade show">
+                    
+    <strong>{{i}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+        {% if i.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+        <div class="alert alert-warning alert-dismissible fade show">
+            
+            <strong>{{i}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+<h2 class="m-3" style="color: rgb(45, 53, 60);">Welcome <span style="color: rgb(8, 8, 8);">{{request.user.first_name}} {{request.user.last_name}}</span></h2>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'ecommerce.jpg' %}" height="400px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'django project3.png' %}" height="400px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'djangoproject3.jpg' %}" height="400px" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <h2 class="text-center mt-5">Categories</h2>
+  <div class="p-2 d-flex justify-content-center">
+    <div class="card" style="width: 22%;">
+        <img src="https://img.lovepik.com/free-png/20211215/lovepik-smartphone-model-png-image_401660433_wh1200.png"
+         class="card-img-top" style="height: 200px;" alt="">
+    <div class="card-body">
+        <h5 class="card-title text-center" >Smart Phone</h5>
+        <a href="{%url 'list' 'Smart Phone' %}" class="stretched-link"></a>
+
+    </div>
+
+    </div>
+    <div class="card" style="width: 22%;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZwmZE24kxhjdU55Gfc8gka2U0yX2ecRANqA&s"
+         class="card-img-top" style="height: 200px;" alt="">
+    <div class="card-body">
+        <h5 class="card-title text-center">Tablets</h5>
+        <a href="{%url 'list' 'Tablet' %}" class="stretched-link"></a>
+
+    </div>
+
+    </div>
+    <div class="card" style="width: 22%;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/MK/KK/ZQ/35510924/bip-3-pro-5-500x500.png" 
+        class="card-img-top" style="height: 200px;" alt="">
+    <div class="card-body">
+        <h5 class="card-title text-center">Smart Watch</h5>
+        <a href="{%url 'list' 'Smart Watch' %}" class="stretched-link"></a>
+
+    </div>
+
+    </div>
+    <div class="card" style="width: 22%;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQieWLPfPKIXXPsibW8XpNaxf4MZ9oTGVMEAw&s" 
+        class="card-img-top" style="height: 200px;" alt="">
+    <div class="card-body">
+        <h5 class="card-title text-center">Laptop</h5>
+        <a href="{%url 'list' 'LapTop' %}" class="stretched-link"></a>
+
+    </div>
+
+    </div>
+
+  </div>
+{% endblock nav %}
+    
